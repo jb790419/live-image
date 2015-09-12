@@ -1,0 +1,3 @@
+#!/bin/bash
+systemctl enable attic.service
+echo "/- /etc/auto.mount" >> /etc/auto.master

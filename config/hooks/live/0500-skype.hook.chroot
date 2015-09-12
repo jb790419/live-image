@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+wget --continue -O skype-install.deb http://download.skype.com/linux/skype-debian_4.3.0.37-1_i386.deb
+# Install the package.
+dpkg --add-architecture i386
+apt-get update || true
+dpkg -i skype-install.deb || true
+# Fix missing dependencies
+apt-get -f -y install || true
+apt-get -y install wine32 || true
+rm -f skype-install.deb || true

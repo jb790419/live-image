@@ -1,0 +1,3 @@
+/mnt/data nas:/i-data/md0/nfs/data
+/var/cache/apt nas:/i-data/md0/nfs/var-cache-apt
+/mnt/backup nas:/i-data/md0/nfs/backup

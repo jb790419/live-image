@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+	#--cache-indices true \
+
+lb config noauto \
+	--clean \
+	--ignore-system-defaults \
+	--architecture amd64 \
+	--mode debian \
+	--distribution jessie \
+	--debian-installer false \
+	--linux-packages "linux-image linux-headers" \
+	--source false \
+	--archive-areas "main contrib non-free" \
+	--apt-indices none \
+	--mirror-bootstrap http://debian.superhosting.cz/debian/ \
+	--mirror-chroot-security http://debian.superhosting.cz/debian-security/ \
+	--mirror-binary http://debian.superhosting.cz/debian/ \
+	--mirror-binary-security http://debian.superhosting.cz/debian-security/ \
+"${@}"

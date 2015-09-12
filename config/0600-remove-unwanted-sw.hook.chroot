@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+aptitude unmarkauto '?reverse-depends(gnome) | ?reverse-recommends(gnome)'
+aptitude unmarkauto '?reverse-depends(gnome-core) | ?reverse-recommends(gnome-core)'
+apt-get -y remove \
+	iceweasel \
+	evolution \
+	empathy \
+	inkscape \
+	transmission-gtk \
+	gnome-maps \
+	gnome-getting-started-docs \
+	gnome-user-guide \
+	five-or-more \
+	four-in-a-row \
+	gnome-klotski \
+	gnome-nibbles \
+	gnome-robots \
+	gnome-tetravex \
+	hitori \
+	iagno \
+	lightsoff \
+	quadrapassel \
+	swell-foop \
+	tali \
+	gnome-hearts
+apt-get -y autoremove

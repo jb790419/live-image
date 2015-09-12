@@ -1,0 +1,14 @@
+[Unit]
+Description=Backup & Restore Home Service
+Before=systemd-user-sessions.service
+After=network.target remote-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/bin/attic.sh restore
+ExecStop=/bin/bash /usr/bin/attic.sh backup
+ExecReload=/bin/bash /usr/bin/attic.sh backup
+RemainAfterExit=yes
+
+[Install]
+WantedBy=getty.target
