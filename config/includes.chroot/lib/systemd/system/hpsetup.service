@@ -1,0 +1,12 @@
+[Unit]
+Description=HP 3525 Setup Printer Service
+Before=systemd-user-sessions.service attic.service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hp-setup --interactive --auto -x 192.168.88.251
+TimeoutSec=60
+
+[Install]
+WantedBy=getty.target

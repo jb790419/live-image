@@ -1,3 +1,4 @@
 #!/bin/bash
 systemctl enable attic.service
 echo "/- /etc/auto.mount" >> /etc/auto.master
+chmod 0600 /root/.ssh/id_ecdsa
