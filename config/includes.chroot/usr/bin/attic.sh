@@ -53,6 +53,7 @@ popd
 backup() {
 echo 'in backup'
 repoattach
+attic prune --keep-daily=3 --keep-weekly=3 --keep-monthly=3 $(getrepo)
 attic create $(getrepo)::$(date --iso-8601=seconds) /home/$(getuser)
 repodetach
 }
